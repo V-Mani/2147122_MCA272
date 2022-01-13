@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Employee_XMLSchema.xsd">
+  <employee>
+    <emp-name>Mani bharthy</emp-name>
+    <emp-age>52</emp-age>
+    <emp-salary>200000</emp-salary>
+    <emp-emailid>manibharathy@gmail.com</emp-emailid>
+    <emp-phonenum>9876543210</emp-phonenum>
+    <emp-designation>Full-stack developer</emp-designation>
+  </employee>
+  <employee>
+    <emp-name>Mohan kumar</emp-name>
+    <emp-age>49</emp-age>
+    <emp-salary>100000</emp-salary>
+    <emp-emailid>Mohankumar@gmail.com</emp-emailid>
+    <emp-phonenum>9876543211</emp-phonenum>
+    <emp-designation>Back-end developer</emp-designation>
+  </employee>
+  <employee>
+    <emp-name>Arun balaji</emp-name>
+    <emp-age>39</emp-age>
+    <emp-salary>90000</emp-salary>
+    <emp-emailid>arunbalaji@gmail.com</emp-emailid>
+    <emp-phonenum>9876543212</emp-phonenum>
+    <emp-designation>UI UX designer</emp-designation>
+  </employee>
+  <employee>
+    <emp-name>Sudharsan</emp-name>
+    <emp-age>35</emp-age>
+    <emp-salary>95000</emp-salary>
+    <emp-emailid>sudharsan@gmail.com</emp-emailid>
+    <emp-phonenum>9876543213</emp-phonenum>
+    <emp-designation>DevOps engineer</emp-designation>
+  </employee>
+  <employee>
+    <emp-name>ram</emp-name>
+    <emp-age>32</emp-age>
+    <emp-salary>80000</emp-salary>
+    <emp-emailid>ram@gmail.com</emp-emailid>
+    <emp-phonenum>9876543214</emp-phonenum>
+    <emp-designation>Web developer</emp-designation>
+  </employee>
+  <employee>
+    <emp-name>mukesh</emp-name>
+    <emp-age>38</emp-age>
+    <emp-salary>80000</emp-salary>
+    <emp-emailid>mukesh@gmail.com</emp-emailid>
+    <emp-phonenum>9876543215</emp-phonenum>
+    <emp-designation>Software engineer</emp-designation>
+  </employee>
+</company>
