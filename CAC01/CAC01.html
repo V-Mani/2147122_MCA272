@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    
     <title>CAC1-2147122</title>
 </head>
 <body>
-  
+    
     <div class="container">
-        <div class="header">
+        <div class="header" >
             <h1 style="text-align: center;">Christ University</h1>
             <h2 style="text-align: center;">Feed back Form</h2>
         </div>
@@ -92,6 +91,16 @@
                 <small>Error message</small>
             </div>
             <button>Submit</button>
+            <input type="button" onclick="myFunction()" style="background-color: #0b3f64;
+            border: 2px solid #0b3f64;
+            border-radius: 4px;
+            color: #fff;
+            display: block;
+            font-family: inherit;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;" value="Reset">
         </form>
     </div>
     
@@ -108,6 +117,12 @@
             
             checkInputs();
         });
+        function myFunction() 
+        {
+            document.getElementById("form").reset();
+            document.setErrorFor(input, message).reset();
+            document.setSuccessFor(input).reset();
+        }
 
         function checkInputs() {
             // trim to remove the whitespaces
@@ -118,7 +133,9 @@
             const addressValue = address.value.trim();
 
             if(usernameValue === '') {
-                setErrorFor(username, 'Username cannot be blank');
+                setErrorFor(username, 'Name cannot be blank');
+            } else if (!isName(usernameValue)) {
+                setErrorFor(username, 'Not a valid Name');
             } else {
                 setSuccessFor(username);
             }
@@ -145,13 +162,6 @@
                 setSuccessFor(password);
             }
     
-            /*
-              if(passwordValue === '') {
-                setErrorFor(password, 'Password cannot be blank');
-            } else {
-                setSuccessFor(password);
-            }
-            */
             if(password2Value === '') {
                 setErrorFor(password2, 'Password2 cannot be blank');
             } 
@@ -174,6 +184,10 @@
         function setSuccessFor(input) {
             const formControl = input.parentElement;
             formControl.className = 'form-control success';
+        }
+        function isName(username)
+        {
+            return/^[a-zA-Z ]{2,30}$/.test(username);
         }
         function isPsw(password)
         {
