@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Gateways 2022 | TECHNOVID</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header" >
+            <h1 style="text-align: center;">Gateways 2022 - "TECHNOVID"</h1>
+            <h2 style="text-align: center;">Dec 12 and 13, 2022</h2>
+        </div>
+        <form id="form" class="form">
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Student-Name" id="name" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Email</label>
+                <input type="email" placeholder="sutdent@gmail.com" id="email" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="department">department</label>
+                <select name="department" id="department">
+                    <option value="BE-cs">BE-cs</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BSc-cs">BSc-cs</option>
+                    <option value="MSc-cs">MSc-cs</option>
+                    <option value="BSc-IT">BSc-It</option>
+                    <option value="MSc-IT">MSc-It</option>
+                  </select>
+            </div>
+            <div class="form-control">
+                <label for="clgname">College Name</label>
+                <input type="text" placeholder="Name of your College" id="clgname" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="state">State</label>
+                <input type="text" placeholder="State" id="state" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="address">Address</label>
+                <input type="text" placeholder="Student-Address" id="address" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="age">Age</label>
+                <input type="text" placeholder="Student-Age" id="age" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="phonenumber">Phone number</label>
+                <input type="text" placeholder="Student-phonenumber" id="phonenumber" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">User-Name</label>
+                <input type="text" placeholder="Username" id="username" />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Password</label>
+                <input type="password" placeholder="Password" id="password"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="username">Confirm-Password</label>
+                <input type="password" placeholder="Confirm-Password" id="password2"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <button>Submit</button>
+            <input type="button" onclick="myFunction()" style="background-color: #0b3f64;
+            border: 2px solid #0b3f64;
+            border-radius: 4px;
+            color: #fff;
+            display: block;
+            font-family: inherit;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;" value="Reset">
+        </form>
+        
+    </div>
+    
+    <script>
+        const form = document.getElementById('form');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const clgname = document.getElementById('clgname');
+        const state = document.getElementById('state');
+        const address = document.getElementById('address');
+        const age = document.getElementById('age');
+        const phonenumber = document.getElementById('phonenumber');
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const password2 = document.getElementById('password2');
+        
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            checkInputs();
+        });
+        function myFunction() 
+        {
+            document.getElementById("form").reset();
+            document.setErrorFor(input, message).reset();
+            document.setSuccessFor(input).reset();
+        }
+
+        function checkInputs() {
+            // trim to remove the whitespaces
+            const nameValue = name.value.trim();
+            const emailValue = email.value.trim();
+            const clgnameValue = clgname.value.trim();
+            const stateValue = state.value.trim();
+            const addressValue = address.value.trim();
+            const ageValue = age.value.trim();
+            const phonenumberValue = phonenumber.value.trim();
+            const usernameValue = username.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+
+            if(nameValue === '') {
+                setErrorFor(name, 'Name cannot be blank');
+            } else if (!isName(nameValue)) {
+                setErrorFor(name, 'Not a valid Name');
+            } else {
+                setSuccessFor(name);
+            }
+
+            if(emailValue === '') {
+                setErrorFor(email, 'Email cannot be blank');
+            } else if (!isEmail(emailValue)) {
+                setErrorFor(email, 'Not a valid email');
+            } else {
+                setSuccessFor(email);
+            }
+
+            if(clgnameValue === '') {
+                setErrorFor(clgname, 'College Name cannot be blank');
+            } else if (!isName(clgnameValue)) {
+                setErrorFor(clgname, 'Not a valid Name');
+            } else {
+                setSuccessFor(clgname);
+            }
+
+            if(stateValue === '') {
+                setErrorFor(state, 'State cannot be blank');
+            } else if (!isName(stateValue)) {
+                setErrorFor(state, 'Not a valid Name');
+            } else {
+                setSuccessFor(state);
+            }
+
+            if(addressValue === '') {
+                setErrorFor(address, 'Address cannot be blank');
+            } else {
+                setSuccessFor(address);
+            }
+
+            if(ageValue === '') {
+                setErrorFor(age, 'Age cannot be blank');
+            } else if (!isAge(ageValue)) {
+                setErrorFor(age, 'Not a valid age');
+            } else {
+                setSuccessFor(age);
+            }
+
+            if(phonenumberValue === '') {
+                setErrorFor(phonenumber, 'Phone number cannot be blank');
+            } else if (!isPhonenumber(phonenumberValue)) {
+                setErrorFor(phonenumber, 'Not a valid Number');
+            } else {
+                setSuccessFor(phonenumber);
+            }
+            
+            if(usernameValue === '') {
+                setErrorFor(username, 'User-Name cannot be blank');
+            } else if (!isName(usernameValue)) {
+                setErrorFor(username, 'Not a valid Name');
+            } else {
+                setSuccessFor(username);
+            }
+
+            if(passwordValue === '') {
+                setErrorFor(password, 'Password cannot be blank');
+            } else if (!isPsw(passwordValue)) {
+                setErrorFor(password, 'Invalid Password');
+            } else {
+                setSuccessFor(password);
+            }
+    
+            if(password2Value === '') {
+                setErrorFor(password2, 'Password2 cannot be blank');
+            } 
+            else if (!isPsw(passwordValue)) {
+                setErrorFor(password, 'Invalid Password');}
+            else if(passwordValue !== password2Value) {
+            setErrorFor(password2, 'Passwords does not match');
+            } else{
+                setSuccessFor(password2);
+            }
+        }
+ 
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control success';
+        }
+        function isName(username)
+        {
+            return/^[a-zA-Z ]{2,30}$/.test(username);
+        }
+        function isEmail(email) 
+        {
+            return /^[a-z0-9](\.?[a-z0-9]){3,}@gmail\.com$/.test(email);
+        }
+        function isAge(age)
+        {
+            return/^[1-9]?[0-9]{1}$|^100$/.test(age);
+        }
+        function isPhonenumber(phonenumber)
+        {
+            return/^[0-9]{10}$/.test(phonenumber);
+        }
+        function isPsw(password)
+        {
+            return/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password);
+        }
+        
+        const un = document.getElementById('username').value;
+        const pn = document.getElementById('phonenumber').value;
+        const em = document.getElementById('email').value;
+        localStorage.setItem('Phonenumber',pn);
+        localStorage.setItem('E-Mail',em);
+        document.cookie="Username="+un;
+
+
+            
+        
+    </script>
+
+</body>
+</html>
